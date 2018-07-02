@@ -34,18 +34,44 @@ register_nav_menu('main_menu', 'Главное меню сайта');
 /* Цитата */
 
 function new_excerpt_length($length) {
-	return 15;
+	return 10;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
 add_action( 'excerpt_more', 'my_excerpt_more' );
-function my_excerpt_more( $more ) {
+function my_excerpt_more() {
     global $post;
     $link = get_permalink( $post->ID );
     // $more = " <a href='$link' class='excerpt-more'>Читать дальше</a>";
   
     return '...';
 }
+//просмотры записей
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0";
+    }
+    return $count.'';
+}
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+
+
 // Кастомная страница входа в админ-панель
 
 function mv_custom_enter () { ?>

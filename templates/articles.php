@@ -4,7 +4,6 @@ Template Name: Статьи
 */
 ?>
 <?php get_header(); ?>
-</div>
 <h1 class="main_title">Статьи</h1>
 <h2 class="main_subtitle">Когда человек не находит выхода из сложной ситуации, перепробовав множество официальных средств, он приходит к эзотерическим
     учениям. И, проявив упорство, обязательно получает результат...</h2>
@@ -13,41 +12,66 @@ Template Name: Статьи
 <section id="articles_list">
     <div class="container">
         <div class="row">
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<?php
+                    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+                    $the_query = new WP_Query( array(
+                        'posts_per_page' => 9,
+                        'category_name'  => 'blog',
+                        'paged'          => $paged,
+                    ) );
+
+                    while( $the_query->have_posts() ){
+                        $the_query->the_post(); ?>
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 article_col">
                 <a class="lp_single" href="<?php the_permalink(); ?>">
-                    <p class="lp_cat"></p>
-                    <?php the_post_thumbnail('full','class=lp_thumbnail'); ?>
+                    <p class="lp_cat"><?php $category = get_the_category(); 
+echo $category[0]->cat_name; ?></p>
+                    <div class="lp_thumbnail" style="background-image: url(<?php the_post_thumbnail_url(); ?>)"></div>
+                    
                     <div class="lp_about">
                         <h4 class="lp_title"><?php the_title(); ?></h4>
-                        <p><?php the_excerpt(); ?></p>
+                        <p class="lp_text"><?php the_excerpt(); ?></p>
                     </div>
                     <div class="lp_footer">
                         <div class="arrow_more">&rarr;</div>
                         <div class="lp_seen">
-                            <i class="fa fa-eye" aria-hidden="true"> </i>32</div>
+                            <i class="fa fa-eye" aria-hidden="true"> </i><?php echo getPostViews(get_the_ID()); ?></div>
                     </div>
                 </a>
             </div>
+            <?php 
+} 
+wp_reset_postdata(); ?>
         </div>
-        <?php endwhile; ?>
-        <ul class="articles_pagination">
-            <?php
+        <?php
             // global $wp_query;
-            $big = 999999999; // need an unlikely integer
-            echo paginate_links( array(
-            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-            'format' => '?paged=%#%',
-            'current' => max( 1, get_query_var('active_pag') ),
-            'total' => $wp_query->max_num_pages,
-            'prev_text' => '<',
-            'next_text' => '>'
-            ) );
+
+$big = 999999999; // уникальное число
+
+$pag = paginate_links( array(
+    'type' => 'array',
+	'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format'  => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+    'total'   => $the_query->max_num_pages,
+    'end_size' => 2,
+    'mid_size' => 1,
+    'prev_text' => ('&lt;'),
+			'next_text' => ('&gt;'),
+) );
+if ($the_query->max_num_pages > 1) :
+    ?>
+    <ul class="articles_pagination">
+        <?php
+        foreach ( $pag as $page ) {
+            echo '<li>' . $page . '</li>';
+        }
+        ?>
+    </ul>
+    <?php
+    endif;
             ?>
-        </ul>
-        <?php else: ?>
-        <!-- no posts found -->
-        <?php endif; ?>
     </div>
 </section>
-<?php get_footer() ?>
+<?php get_footer(); ?>

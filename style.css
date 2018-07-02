@@ -3,6 +3,7 @@ Theme Name: MasterVision
 Author: Pavel P
 Description: Для компании Mastervision
 Version: 2.0
+Text Domain: mastervision
 */
 .alignnone {
     margin: 5px 20px 20px 0;
@@ -211,6 +212,12 @@ iframe {
 }
 
 @-webkit-keyframes autofill {
+    to {
+        color: #000;
+        background: transparent
+    }
+}
+@keyframes autofill {
     to {
         color: #000;
         background: transparent
@@ -590,7 +597,6 @@ article img {
     box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
     width: 360px!important;
     height: 420px;
-    display: inline-block;
     margin: 0 15px;
     position: relative;
     padding: 29px;
@@ -1276,7 +1282,6 @@ article img {
     box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
     width: 360px!important;
     height: 457px;
-    display: inline-block;
     margin: 0 15px;
     position: relative;
     float: left
@@ -1314,10 +1319,23 @@ article img {
     color: #fff;
     text-transform: uppercase
 }
-
+.article_col a:focus,
+.article_col a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.lp_cat a:focus,
+.lp_cat a:hover {
+    color: #fff;
+    text-decoration: none;
+}
 .lp_thumbnail {
     width: 100%;
-    height: 170px
+    height: 170px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
 .lp_about {
@@ -1333,12 +1351,12 @@ article img {
     margin-bottom: 11px
 }
 
-.lp_title+p {
+.lp_about p {
     font-size: 18px;
     font-family: "HelveticaNeueCyrRoman", sans-serif;
     color: rgba(85, 94, 124, .8);
     line-height: 1.444;
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 .arrow_more {
@@ -1416,7 +1434,7 @@ article img {
 }
 
 .articles_pagination {
-    width: 300px;
+    max-width: 300px;
     margin: 15px auto 0;
     display: table;
     text-align: center
@@ -1428,7 +1446,8 @@ article img {
     vertical-align: middle
 }
 
-.articles_pagination li a {
+.articles_pagination li a,
+.articles_pagination li span{
     display: block;
     margin: 0 auto;
     width: 50px;
@@ -1445,7 +1464,8 @@ article img {
     text-decoration: none
 }
 
-.articles_pagination .active_pag a {
+.articles_pagination  .current {
+
     background-color: #4745d7;
     color: #fff
 }
@@ -3580,6 +3600,23 @@ article img {
     .feedback_form {
         padding: 30px
     }
+    .articles_pagination {
+        display: block;
+    }
+    .articles_pagination li {
+        display: inline-block;
+    }
+    .articles_pagination li a {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        font-size: 16px;
+    }
+    .articles_pagination li a, .articles_pagination li span {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -3702,6 +3739,7 @@ article img {
     .contacts_container p {
         margin-bottom: 10px
     }
+
 }
 
 @media screen and (max-width:426px) {
@@ -3969,6 +4007,7 @@ article img {
     #consultation_order {
         padding: 30px 0 40px
     }
+
 }
 
 @media screen and (max-width:380px) {
@@ -4067,12 +4106,7 @@ article img {
     .lp_footer {
         margin-top: 30px
     }
-    .articles_pagination li a {
-        height: 40px;
-        width: 40px;
-        line-height: 40px;
-        font-size: 18px
-    }
+
     #main_screen {
         padding-bottom: 30px
     }
