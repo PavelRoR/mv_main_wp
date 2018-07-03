@@ -17,17 +17,17 @@ Template Name: Контакты
     </section>
     <section id="contacts_list">
       <div class="container">
-        <form class="feedback_form" action="#!" method="POST">
+        <div class="feedback_form contacts_feedback_form" >
           <h3>Написать нам</h3>
-          <input type="text" name="name" required="required" placeholder="Ваше имя"/>
-          <input type="email" name="email" required="required" placeholder="Ваш Email"/>
+          <input type="email" name="email" placeholder="Ваш Email"/>
+          <input type="text" name="name"  placeholder="Ваше имя"/>
           <textarea name="msg" required="required" placeholder="Сообщение"></textarea>
           <div class="checking">
             <input class="check" type="checkbox" id="check" checked="checked"/>
             <label class="check_label" for="check">Я согласен с <a href="javascript:void(0);" data-toggle="modal" data-target="#myPolitics">условиями обработки </a>персональных данных</label>
           </div>
-          <button class="button" type="submit" onclick="return false">Отправить</button>
-        </form>
+          <button class="button" type="submit" >Отправить</button>
+        </div>
       </div>
     </section>
 <?php get_footer(); ?>

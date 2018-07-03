@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="MasterVision" />
     <meta name="description" content=" «MasterVision»" />
-    <meta http-equiv="Content-Security-Policy" content="policy-definition">
-
     <title><?php bloginfo('name'); wp_title(); ?></title>
     <?php wp_head(); ?>
 </head>

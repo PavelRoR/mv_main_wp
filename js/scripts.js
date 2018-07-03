@@ -250,17 +250,26 @@ $(document).ready(function () {
 
         });
     });
-    // $(function () {
-    //     $('.all_specialists').toggle(function () {
-    //             $('#our_specialists_more').slideDown(600);
-    //             $(this).text('Свернуть');
-    //         },
-    //         function () {
-    //             $('#our_specialists_more').slideUp(600);
-    //             $(this).text('Все специалисты');
-    //         }
+    $(function () {
+        $('.contacts_feedback_form .button').on('click', 
+        function () {
+            var nm = $('.contacts_feedback_form input[name=name]'),
+            em = $('.contacts_feedback_form input[name=email]'),
+            ms =  $('.contacts_feedback_form textarea');
+            nm.val('');
 
-    //     )
-    // });
+            $('.contacts_feedback_form .button').text('Отправлено');
+            $.ajax({
+                url: '/wp-content/themes/mastervision/mails/contacts.php',
+                type: 'POST',
+                data: {
+                    n: nm.val(),
+                    e: em.val(),
+                    m: ms.val()
+                }
+            });
+        }
+    );
+    });
     /*Конец документа*/
 });
