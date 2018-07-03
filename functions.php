@@ -69,7 +69,26 @@ function setPostViews($postID) {
         update_post_meta($postID, $count_key, $count);
     }
 }
+/* FAQ */
 
+function faq(){
+	register_post_type('faq', array(
+		'post_type' => 'post',
+		'public' => true,
+		'has_archive' => fals,
+	  	'show_in_menu'  => true,
+		'menu_icon' => 'dashicons-welcome-learn-more',
+		'supports' => array('title', 'editor', 'author','revisions','post-formats'),
+		'labels' => array(
+			'name' => 'FAQ',
+			'all_items' => 'Все вопросы',
+			'add_new' => 'Добавить новый',
+			'add_new_item' => 'Добавление вопроса'
+		)
+	));
+}
+
+add_action('init', 'faq');
 
 
 // Кастомная страница входа в админ-панель

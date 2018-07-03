@@ -31,5 +31,5 @@
         <div id="menu_container">
           <ul id="main_menu">
           <?php wp_nav_menu( array('menu' => 'main_menu',  'items_wrap' => '%3$s')); ?>
-          <a class="pc_button" href="personal-account" target="_blank">Личный кабинет</a>
+          <a class="pc_button" href="/personal-account" target="_blank">Личный кабинет</a>
         </div>

@@ -111,18 +111,19 @@ $(document).ready(function () {
 
     /*FAQ*/
     $(function () {
-        $('.faq_container').on('click', function () {
-            var a = $('.faq_title span', this);
+        $('.faq_title').on('click', function () {
+            var a = $('span', this);
             if (a.text() == '+') {
                 a.text('-');
-                $('.faq_content', this).slideDown(500);
+                $(this).next().slideDown(500);
             } else {
                 a.text('+');
-                $('.faq_content', this).slideUp(500);
+                $(this).next().slideUp(500);
 
             }
         });
     });
+    /*Проверка почты */
     $(function () {
         var check = $('.check', this),
             email = $('.main_form_email', this),
