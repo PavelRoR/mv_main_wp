@@ -23,7 +23,7 @@ Template Name: Контакты
           <input type="text" name="name"  placeholder="Ваше имя"/>
           <textarea name="msg" placeholder="Сообщение"></textarea>
           <p class="alert_message"></p>
-          <p class="success_message">Спасибо! Мы получили Ваше сообщение и скоро свяжемся с Вами</p>
+          <p class="success_message"></p>
           <div class="checking">
             <input class="check" type="checkbox" id="check" checked="checked"/>
             <label class="check_label" for="check">Я согласен с <a href="javascript:void(0);" data-toggle="modal" data-target="#myPolitics">условиями обработки </a>персональных данных</label>

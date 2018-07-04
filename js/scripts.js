@@ -259,6 +259,7 @@ $(document).ready(function () {
             em = $('.contacts_feedback_form input[name=email]'),
             ms = $('.contacts_feedback_form textarea'),
             check = $('.contacts_feedback_form .check'),
+            btn = $('.contacts_feedback_form .button'),
             message = $('.contacts_feedback_form .alert_message'),
             message2 = $('.contacts_feedback_form .success_message');
         $('.contacts_feedback_form .button').on('click',
@@ -288,7 +289,7 @@ $(document).ready(function () {
                     message.text('Подтвердите соглашение').slideDown(500);
                     return false;
                 };
-
+                btn.text('Отправка...');
                 $.ajax({
                     url: '/wp-content/themes/mastervision/mails/contacts.php',
                     type: 'POST',
@@ -296,35 +297,47 @@ $(document).ready(function () {
                         n: nm.val(),
                         e: em.val(),
                         m: ms.val()
+                    },
+                    success: function (data) {
+                        message2.slideDown(500).text(data);
+                        nm.val('');
+                        em.val('');
+                        ms.val('');
+                        btn.text('Отправлено');
+                    },
+                    error: function (data) {
+                        message.slideDown(500).text(data)
+                        btn.text('Отправить');
                     }
                 });
 
 
-                nm.val('');
-                em.val('');
-                ms.val('');
-                message2.slideDown(500);
+
             }
         );
         em.click(function () {
             em.css("border-color", "rgba(85, 94, 124, .3)");
             message.slideUp(500);
             message2.slideUp(500);
+            btn.text('Отправить');
         });
         nm.click(function () {
             nm.css("border-color", "rgba(85, 94, 124, .3)");
             message.slideUp(500);
             message2.slideUp(500);
+            btn.text('Отправить');
         });
         ms.click(function () {
             ms.css("border-color", "rgba(85, 94, 124, .3)");
             message.slideUp(500);
             message2.slideUp(500);
+            btn.text('Отправить');
         });
         check.click(function () {
             check.next().css("color", "rgba(17, 17, 18, .8)");
             message.slideUp(500);
             message2.slideUp(500);
+            btn.text('Отправить');
         });
     });
     /*Конец документа*/
