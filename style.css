@@ -1922,11 +1922,11 @@ article img {
     height: 55px;
     line-height: 53px;
     width: 49%;
-    float: right
+    float: left
 }
 
 .feedback_form input:nth-of-type(2) {
-    float: left
+    float: right
 }
 
 .feedback_form textarea {
@@ -1939,7 +1939,7 @@ article img {
 .feedback_form .button {
     margin: 0 auto;
     padding: 0 41px;
-    max-width: 167px;
+    max-width: 190px;
     display: block;
     text-align: center
 }
@@ -1947,7 +1947,12 @@ article img {
 #consultation_order {
     padding: 60px 0 80px
 }
-
+#our_specialists_more .hidden_consultants:first-child,
+#our_specialists_more .hidden_consultants:nth-child(2),
+#our_specialists_more .hidden_consultants:nth-child(3),
+#our_specialists_more .hidden_consultants:nth-child(4) {
+    display: none;
+}
 #consultation_order h5 {
     font-size: 32px;
     font-family: "HelveticaNeueCyrBold", sans-serif;
@@ -1972,7 +1977,7 @@ article img {
 }
 
 .consult_form input:nth-child(4) {
-    float: left
+    float: right
 }
 
 .request_example {
@@ -2079,7 +2084,7 @@ article img {
     padding: 94px 0 65px;
     text-align: center
 }
-.contacts_feedback_form .checking {
+.feedback_form .checking {
     max-width: 390px;
 }
 #we_in_numbers h3 {

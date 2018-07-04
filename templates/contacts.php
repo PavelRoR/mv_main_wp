@@ -19,8 +19,8 @@ Template Name: Контакты
       <div class="container">
         <div class="feedback_form contacts_feedback_form" >
           <h3>Написать нам</h3>
-          <input type="email" name="email" placeholder="Ваш Email"/>
           <input type="text" name="name"  placeholder="Ваше имя"/>
+          <input type="email" name="email" placeholder="Ваш Email"/>
           <textarea name="msg" placeholder="Сообщение"></textarea>
           <p class="alert_message"></p>
           <p class="success_message"></p>

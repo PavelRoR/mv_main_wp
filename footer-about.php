@@ -2,7 +2,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md- col-sm-4 col-xs-6" id="footer_contacts"><a href="/" target="_blank" class="logo"><img src="<?php bloginfo('template_url');?>/img/logo.png" alt="Логотип"/></a>
-            <div class="contacts"><a class="tel" href="callto:8-499-346-79-46" target="_blank">тел.: <span>8-499-346-79-46</span></a><a class="skype" href="skype:add?admin-mastervision" target="_blank">skype: <span>admin-mastervision</span></a><a class="mail" href="mailto:info@mastervision.su" target="_blank">e-mail: <span>info@mastervision.su</span></a></div>
+            <div class="contacts"><a class="tel" href="callto:8-499-346-79-46" target="_blank">тел.: <span>8-499-346-79-46</span></a><a class="tel" href="callto:8-929-568-87-50" target="_blank">тел.: <span>8-929-568-87-50</span></a><a class="skype" href="skype:add?admin-mastervision" target="_blank">skype: <span>admin-mastervision</span></a><a class="mail" href="mailto:info@mastervision.su" target="_blank">e-mail: <span>info@mastervision.su</span></a></div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <ul id="footer_menu">

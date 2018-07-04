@@ -12,8 +12,17 @@ function load_styles_and_scripts() {
 	wp_enqueue_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',  'in_footer');
 	wp_enqueue_script('jquery-2.1.1', get_template_directory_uri() . '/js/jquery-2.1.1.min.js',  'in_footer');
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',  'in_footer');
-	wp_enqueue_script('lightslider', get_template_directory_uri() . '/js/lightslider.min.js', '', true);
+	if (is_home()) {
+		wp_enqueue_script('lightslider', get_template_directory_uri() . '/js/lightslider.min.js', '', true);
+		wp_enqueue_script('sliders', get_template_directory_uri() . '/js/sliders.js',  true);
+	}
 	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js',  'in_footer');
+	if(is_page('personal-consultation')) {
+		wp_enqueue_script('consult_form', get_template_directory_uri() . '/js/consult.js',  'in_footer');
+	}
+	if(is_page('contacts')) {
+		wp_enqueue_script('contact_form', get_template_directory_uri() . '/js/contacts.js',  'in_footer');
+	}
 }
 
 add_action('wp_enqueue_scripts', 'load_styles_and_scripts');
@@ -89,6 +98,26 @@ function faq(){
 }
 
 add_action('init', 'faq');
+
+/* Консультанты */
+
+function consultants(){
+	register_post_type('consultants', array(
+		'post_type' => 'post',
+		'public' => true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-id',
+		'supports' => array('title', 'editor', 'author','revisions','thumbnail'),
+		'labels' => array(
+			'name' => 'Консультанты',
+			'all_items' => 'Все консультанты',
+			'add_new' => 'Добавить нового',
+			'add_new_item' => 'Добавление консультанта'
+		)
+	));
+}
+
+add_action('init', 'consultants');
 
 
 // Кастомная страница входа в админ-панель
