@@ -5,6 +5,7 @@ Description: Для компании Mastervision
 Version: 2.0
 Text Domain: mastervision
 */
+
 .alignnone {
     margin: 5px 20px 20px 0;
 }
@@ -86,6 +87,7 @@ a img .aligncenter {
     margin: 0;
     padding: 0 4px 5px;
 }
+
 @font-face {
     font-family: 'HelveticaNeueCyrBlack';
     src: url("fonts/HelveticaNeueCyrBlack.eot");
@@ -217,6 +219,7 @@ iframe {
         background: transparent
     }
 }
+
 @keyframes autofill {
     to {
         color: #000;
@@ -226,7 +229,9 @@ iframe {
 
 input:-webkit-autofill {
     -webkit-animation-name: autofill;
-    -webkit-animation-fill-mode: both
+    animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
 }
 
 button {
@@ -595,7 +600,7 @@ article img {
     background-color: #fff;
     -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
     box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
-    width: 360px!important;
+    width: 360px !important;
     height: 420px;
     margin: 0 15px;
     position: relative;
@@ -1272,7 +1277,7 @@ article img {
 }
 
 #last_posts_slider {
-    width: 2000px!important
+    width: 2000px !important
 }
 
 .lp_single {
@@ -1280,7 +1285,7 @@ article img {
     background-color: #fff;
     -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
     box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
-    width: 360px!important;
+    width: 360px !important;
     height: 457px;
     margin: 0 15px;
     position: relative;
@@ -1319,16 +1324,19 @@ article img {
     color: #fff;
     text-transform: uppercase
 }
+
 .article_col a:focus,
 .article_col a:hover {
     color: #fff;
     text-decoration: none;
 }
+
 .lp_cat a:focus,
 .lp_cat a:hover {
     color: #fff;
     text-decoration: none;
 }
+
 .lp_thumbnail {
     width: 100%;
     height: 170px;
@@ -1447,7 +1455,7 @@ article img {
 }
 
 .articles_pagination li a,
-.articles_pagination li span{
+.articles_pagination li span {
     display: block;
     margin: 0 auto;
     width: 50px;
@@ -1464,8 +1472,7 @@ article img {
     text-decoration: none
 }
 
-.articles_pagination  .current {
-
+.articles_pagination .current {
     background-color: #4745d7;
     color: #fff
 }
@@ -1551,7 +1558,7 @@ article img {
     margin: 0 auto 60px;
     float: none;
     height: 420px;
-    width: 100%!important
+    width: 100% !important
 }
 
 #exersises_list .lp_single:hover .lp_button {
@@ -1947,12 +1954,14 @@ article img {
 #consultation_order {
     padding: 60px 0 80px
 }
+
 #our_specialists_more .hidden_consultants:first-child,
 #our_specialists_more .hidden_consultants:nth-child(2),
 #our_specialists_more .hidden_consultants:nth-child(3),
 #our_specialists_more .hidden_consultants:nth-child(4) {
     display: none;
 }
+
 #consultation_order h5 {
     font-size: 32px;
     font-family: "HelveticaNeueCyrBold", sans-serif;
@@ -2063,30 +2072,35 @@ article img {
 #our_specialists_more {
     display: none
 }
+
 .alert_message {
-	display: none;
-	text-align: center;
-	font-size: 16px;
-	padding: 0 0 10px;
-	font-family: 'OpenSansRegular', sans-serif;
-	color: red;
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 0 0 10px;
+    font-family: 'OpenSansRegular', sans-serif;
+    color: red;
 }
+
 .success_message {
-	display: none;
-	text-align: center;
-	font-size: 16px;
-	padding: 0 0 10px;
-	font-family: 'OpenSansRegular', sans-serif;
-	color: green;
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 0 0 10px;
+    font-family: 'OpenSansRegular', sans-serif;
+    color: green;
 }
+
 #we_in_numbers {
     background-color: #fff;
     padding: 94px 0 65px;
     text-align: center
 }
+
 .feedback_form .checking {
     max-width: 390px;
 }
+
 #we_in_numbers h3 {
     font-size: 32px;
     font-family: "HelveticaNeueCyrBold", sans-serif;
@@ -3072,7 +3086,7 @@ article img {
         margin-right: 20px
     }
     .cir_single {
-        width: 280px!important;
+        width: 280px !important;
         height: 323px
     }
     .cir_title {
@@ -3141,12 +3155,12 @@ article img {
         width: 490px
     }
     .lp_single {
-        width: 280px!important;
+        width: 280px !important;
         height: 530px
     }
     #articles_list .article_col .lp_single,
     #exersises_list .lp_single {
-        width: 90%!important
+        width: 90% !important
     }
     #articles_list .article_col .lp_single {
         height: 480px
@@ -3459,7 +3473,7 @@ article img {
     }
     #articles_list .article_col .lp_single,
     #exersises_list .lp_single {
-        width: 450px!important
+        width: 450px !important
     }
     #exersises_list .exersise_col:last-child .lp_single {
         margin-bottom: 0
@@ -3566,7 +3580,6 @@ article img {
     }
     .contacts_container .tel:last-child {
         margin-bottom: 20px;
-        
     }
     .contacts_container .tel {
         float: left
@@ -3644,13 +3657,14 @@ article img {
         line-height: 30px;
         font-size: 16px;
     }
-    .articles_pagination li a, .articles_pagination li span {
+    .articles_pagination li a,
+    .articles_pagination li span {
         height: 30px;
         width: 30px;
         line-height: 30px;
     }
     .contacts_container a span,
-    .contacts_container p span{
+    .contacts_container p span {
         display: block;
     }
     .contacts_container .tel {
@@ -3702,7 +3716,7 @@ article img {
     }
     #articles_list .article_col .lp_single,
     #exersises_list .lp_single {
-        width: 300px!important;
+        width: 300px !important;
         height: auto;
         padding-bottom: 30px
     }
@@ -3781,7 +3795,6 @@ article img {
     .contacts_container p {
         margin-bottom: 10px
     }
-
 }
 
 @media screen and (max-width:426px) {
@@ -3790,7 +3803,7 @@ article img {
         margin-bottom: 30px
     }
     .cir_single {
-        width: 250px!important;
+        width: 250px !important;
         overflow: hidden
     }
     #about_eso_video_container h4,
@@ -3849,7 +3862,7 @@ article img {
         line-height: 1.2
     }
     .lp_single {
-        width: 250px!important;
+        width: 250px !important;
         height: 480px
     }
     #footer .col-xs-6 {
@@ -4049,7 +4062,6 @@ article img {
     #consultation_order {
         padding: 30px 0 40px
     }
-
 }
 
 @media screen and (max-width:380px) {
@@ -4086,7 +4098,7 @@ article img {
     }
     .cir_single,
     .lp_single {
-        width: 205px!important
+        width: 205px !important
     }
     #about_eso_video_container:after,
     .news_video_container:after {
@@ -4148,7 +4160,6 @@ article img {
     .lp_footer {
         margin-top: 30px
     }
-
     #main_screen {
         padding-bottom: 30px
     }
@@ -4200,6 +4211,6 @@ article img {
     }
     #articles_list .article_col .lp_single,
     #exersises_list .lp_single {
-        width: 100%!important
+        width: 100% !important
     }
 }
