@@ -2058,13 +2058,30 @@ article img {
 #our_specialists_more {
     display: none
 }
-
+.alert_message {
+	display: none;
+	text-align: center;
+	font-size: 16px;
+	padding: 0 0 10px;
+	font-family: 'OpenSansRegular', sans-serif;
+	color: red;
+}
+.success_message {
+	display: none;
+	text-align: center;
+	font-size: 16px;
+	padding: 0 0 10px;
+	font-family: 'OpenSansRegular', sans-serif;
+	color: green;
+}
 #we_in_numbers {
     background-color: #fff;
     padding: 94px 0 65px;
     text-align: center
 }
-
+.contacts_feedback_form .checking {
+    max-width: 390px;
+}
 #we_in_numbers h3 {
     font-size: 32px;
     font-family: "HelveticaNeueCyrBold", sans-serif;
@@ -3310,7 +3327,7 @@ article img {
         left: 30px;
         right: auto
     }
-    .contacts_container .tel {
+    .contacts_container .tel:last-child {
         margin-bottom: 50px
     }
     .feedback_form {
@@ -3542,6 +3559,16 @@ article img {
         margin: 0 auto 80px;
         width: 225px
     }
+    .contacts_container .tel:last-child {
+        margin-bottom: 20px;
+        
+    }
+    .contacts_container .tel {
+        float: left
+    }
+    .contacts_container .skype {
+        clear: both;
+    }
 }
 
 @media screen and (max-width:620px) {
@@ -3616,6 +3643,16 @@ article img {
         height: 30px;
         width: 30px;
         line-height: 30px;
+    }
+    .contacts_container a span,
+    .contacts_container p span{
+        display: block;
+    }
+    .contacts_container .tel {
+        float: none;
+    }
+    .contacts_container .tel:first-child {
+        margin-bottom: 0
     }
 }
 

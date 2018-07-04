@@ -251,25 +251,81 @@ $(document).ready(function () {
         });
     });
     $(function () {
-        $('.contacts_feedback_form .button').on('click', 
-        function () {
-            var nm = $('.contacts_feedback_form input[name=name]'),
+        var
+            reNone = /.+/,
+            reEm = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{1,20}$/,
+            rePh = /^[+]?\d*\.?\d*$/;
+        nm = $('.contacts_feedback_form  input[name=name]'),
             em = $('.contacts_feedback_form input[name=email]'),
-            ms =  $('.contacts_feedback_form textarea');
-            nm.val('');
+            ms = $('.contacts_feedback_form textarea'),
+            check = $('.contacts_feedback_form .check'),
+            message = $('.contacts_feedback_form .alert_message'),
+            message2 = $('.contacts_feedback_form .success_message');
+        $('.contacts_feedback_form .button').on('click',
+            function () {
+                if (!nm.val().match(reNone)) {
+                    nm.css("border", "1px solid red");
+                    message.text('Введите имя').slideDown(500);
+                    return false;
+                };
+                if (!em.val().match(reNone)) {
+                    em.css("border", "1px solid red");
+                    message.text('Введите email').slideDown(500);
+                    return false;
+                };
+                if (!em.val().match(reEm)) {
+                    em.css("border", "1px solid red");
+                    message.text('Email введен некорректно').slideDown(500);
+                    return false;
+                };
+                if (!ms.val().match(reNone)) {
+                    ms.css("border", "1px solid red");
+                    message.text('Введите сообщение').slideDown(500);
+                    return false;
+                };
+                if (!check.prop("checked")) {
+                    check.next().css("color", "red");
+                    message.text('Подтвердите соглашение').slideDown(500);
+                    return false;
+                };
 
-            $('.contacts_feedback_form .button').text('Отправлено');
-            $.ajax({
-                url: '/wp-content/themes/mastervision/mails/contacts.php',
-                type: 'POST',
-                data: {
-                    n: nm.val(),
-                    e: em.val(),
-                    m: ms.val()
-                }
-            });
-        }
-    );
+                $.ajax({
+                    url: '/wp-content/themes/mastervision/mails/contacts.php',
+                    type: 'POST',
+                    data: {
+                        n: nm.val(),
+                        e: em.val(),
+                        m: ms.val()
+                    }
+                });
+
+
+                nm.val('');
+                em.val('');
+                ms.val('');
+                message2.slideDown(500);
+            }
+        );
+        em.click(function () {
+            em.css("border-color", "rgba(85, 94, 124, .3)");
+            message.slideUp(500);
+            message2.slideUp(500);
+        });
+        nm.click(function () {
+            nm.css("border-color", "rgba(85, 94, 124, .3)");
+            message.slideUp(500);
+            message2.slideUp(500);
+        });
+        ms.click(function () {
+            ms.css("border-color", "rgba(85, 94, 124, .3)");
+            message.slideUp(500);
+            message2.slideUp(500);
+        });
+        check.click(function () {
+            check.next().css("color", "rgba(17, 17, 18, .8)");
+            message.slideUp(500);
+            message2.slideUp(500);
+        });
     });
     /*Конец документа*/
 });
