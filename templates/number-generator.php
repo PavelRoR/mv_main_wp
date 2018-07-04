@@ -1,24 +1,39 @@
 <?php
 /*
-Template Name: Упражнения: Генератор цвета
+Template Name: Упражнения: Генератор чисел
 */
 ?>
 <?php get_header('single'); ?>
-<div class="single_container">
-          <h1 class="main_title">Упражнение "Генератор цвета"</h1>
+<h1 class="main_title">Упражнение "Генератор чисел"</h1>
           <h2 class="main_subtitle">Тест на проверку и развитие экстрасенсорных способностей</h2>
         </div>
       </div>
     </section>
-    <section id="color_generator">
+    <section id="number_generator">
       <div class="container">
+        <table id="number_generator_table">
+          <tbody>
+            <tr>
+              <td><a href="javascript:vip(1);">1</a></td>
+              <td><a href="javascript:vip(2);">2</a></td>
+              <td><a href="javascript:vip(3);">3</a></td>
+            </tr>
+            <tr>
+              <td><a href="javascript:vip(4);">4</a></td>
+              <td><a href="javascript:vip(5);">5</a></td>
+              <td><a href="javascript:vip(6);">6</a></td>
+            </tr>
+            <tr>
+              <td><a href="javascript:vip(7);">7</a></td>
+              <td><a href="javascript:vip(8);">8</a></td>
+              <td><a href="javascript:vip(9);">9</a></td>
+            </tr>
+          </tbody>
+        </table>
         <div class="single_container">
-          <div id="color_box"></div>
-          <p>(если цветной фон мешает, кликните на большую картинку, чтобы вернуть белый фон)</p>
-          <div id="cg_colors"><a class="cg_red" href="javascript:vip(red)"></a><a class="cg_green" href="javascript:vip(green)"></a><a class="cg_blue" href="javascript:vip(blue)"></a></div>
           <div class="instruction">
-            <p>Вы видите три варианта цвета. Вам необходимо, с помощью интуиции, определить какой из этих цветов был загадан программой.</p>
-            <p>Правильный ответ появиться в поле, обведенном рамкой</p>
+            <p>Вы видите квадрат с девятью цифрами. Вам необходимо, с помощью интуиции, определить какое число было загадано программой.</p>
+            <p>Если указанная Вами цифра совпадает с цифрой сгенерированной программой - Вы увидите зеленую надпись, в противном случае - красную</p>
             <p>Для большей достоверности результатов, сделайте больше 100 попыток.</p>
             <p>Для повышения рузультатов, обратите внимания на свои ощущения, на образы, мелькающие в голове, на звуки, вкусы и запахи, которые Вы можете видеть, слышать или чувствовать в себе.</p>
             <p>Все это может иметь значение, посредством ваших внутренних чувств, проявляется Ваша интуиция.</p>

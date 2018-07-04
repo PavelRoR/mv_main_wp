@@ -1,29 +1,26 @@
 <?php
 /*
-Template Name: Упражнения: Генератор цвета
+Template Name: Упражнения: Карты Зенера
 */
 ?>
 <?php get_header('single'); ?>
-<div class="single_container">
-          <h1 class="main_title">Упражнение "Генератор цвета"</h1>
+<h1 class="main_title">Упражнение "Карты Зенера"</h1>
           <h2 class="main_subtitle">Тест на проверку и развитие экстрасенсорных способностей</h2>
         </div>
       </div>
     </section>
-    <section id="color_generator">
+    <section id="zener_cards">
       <div class="container">
         <div class="single_container">
-          <div id="color_box"></div>
-          <p>(если цветной фон мешает, кликните на большую картинку, чтобы вернуть белый фон)</p>
-          <div id="cg_colors"><a class="cg_red" href="javascript:vip(red)"></a><a class="cg_green" href="javascript:vip(green)"></a><a class="cg_blue" href="javascript:vip(blue)"></a></div>
+          <div id="zc_main_card"></div>
+          <div id="zc_cards"><a class="circle" href="javascript:vip(circle)"></a><a class="cross" href="javascript:vip(cross)"></a><a class="waves" href="javascript:vip(waves)"></a><a class="square" href="javascript:vip(square)"></a><a class="star" href="javascript:vip(star)"></a></div>
           <div class="instruction">
-            <p>Вы видите три варианта цвета. Вам необходимо, с помощью интуиции, определить какой из этих цветов был загадан программой.</p>
+            <p>Вы видите пять карт. Вам необходимо, с помощью интуиции, определить какой из этих цветов был загадан программой</p>
             <p>Правильный ответ появиться в поле, обведенном рамкой</p>
-            <p>Для большей достоверности результатов, сделайте больше 100 попыток.</p>
-            <p>Для повышения рузультатов, обратите внимания на свои ощущения, на образы, мелькающие в голове, на звуки, вкусы и запахи, которые Вы можете видеть, слышать или чувствовать в себе.</p>
-            <p>Все это может иметь значение, посредством ваших внутренних чувств, проявляется Ваша интуиция.</p>
+            <p>Для большей достоверности результатов, сделайте больше 100 попыток</p>
+            <p>Для повышения рузультатов, обратите внимания на свои ощущения, на образы, мелькающие в голове, на звуки, вкусы и запахи, которые Вы можете видеть, слышать или чувствовать в себе</p>
+            <p>Все это может иметь значение, посредством ваших внутренних чувств, проявляется Ваша интуиция</p>
           </div>
-          <div id="numbers_result"></div>
           <div id="numbers_count"></div>
           <button class="button" id="restart">Начать сначала</button>
         </div>

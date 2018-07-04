@@ -23,6 +23,18 @@ function load_styles_and_scripts() {
 	if(is_page('contacts')) {
 		wp_enqueue_script('contact_form', get_template_directory_uri() . '/js/contacts.js',  'in_footer');
 	}
+	if(is_page('color-generator')) {
+		wp_enqueue_script('color-generator', get_template_directory_uri() . '/js/color-generator.js',  'in_footer');
+	}
+	if(is_page('number-generator')) {
+		wp_enqueue_script('number-generator', get_template_directory_uri() . '/js/number-generator.js',  'in_footer');
+	}
+	if(is_page('shulte')) {
+		wp_enqueue_script('shulte', get_template_directory_uri() . '/js/shulte.js',  'in_footer');
+	}
+	if(is_page('zener-cards')) {
+		wp_enqueue_script('zener-cards', get_template_directory_uri() . '/js/zener-cards.js',  'in_footer');
+	}
 }
 
 add_action('wp_enqueue_scripts', 'load_styles_and_scripts');
