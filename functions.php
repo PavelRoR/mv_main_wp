@@ -13,10 +13,14 @@ function load_styles_and_scripts() {
 	wp_enqueue_script('jquery-2.1.1', get_template_directory_uri() . '/js/jquery-2.1.1.min.js',  'in_footer');
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',  'in_footer');
 	if (is_home()) {
+		wp_enqueue_style('lightslider_styles', get_template_directory_uri() . '/css/lightslider.min.css', '', true);
 		wp_enqueue_script('lightslider', get_template_directory_uri() . '/js/lightslider.min.js', '', true);
-		wp_enqueue_script('sliders', get_template_directory_uri() . '/js/sliders.js',  true);
+		wp_enqueue_script('sliders', get_template_directory_uri() . '/js/home.js',  true);
 	}
 	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js',  'in_footer');
+	if(is_page('faq')) {
+		wp_enqueue_script('faq', get_template_directory_uri() . '/js/faq.js',  'in_footer');
+	}
 	if(is_page('personal-consultation')) {
 		wp_enqueue_script('consult_form', get_template_directory_uri() . '/js/consult.js',  'in_footer');
 	}
@@ -35,6 +39,7 @@ function load_styles_and_scripts() {
 	if(is_page('zener-cards')) {
 		wp_enqueue_script('zener-cards', get_template_directory_uri() . '/js/zener-cards.js',  'in_footer');
 	}
+
 }
 
 add_action('wp_enqueue_scripts', 'load_styles_and_scripts');
@@ -166,7 +171,7 @@ function mastervision_comment( $comment, $args, $depth ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<header class="comment-meta comment-author vcard">
 				<?php
-					echo get_avatar( $comment, 44 );
+					// echo get_avatar( $comment, 44 );
 					printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
@@ -198,6 +203,11 @@ function mastervision_comment( $comment, $args, $depth ) {
 		break;
 	endswitch; // end comment_type check
 }
+function my_scripts_method() {
+	wp_enqueue_script( 'comment-reply' );            
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
 /* Удаление версии ВП */
 remove_action('wp_head', 'wp_generator'); // из заголовка
 add_filter('the_generator', '__return_empty_string'); // из фидов и URL

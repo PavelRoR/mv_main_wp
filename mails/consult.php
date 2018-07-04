@@ -28,7 +28,7 @@ $mail->addAddress($to);     // Кому будет уходить письмо
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Сообщение со страницы https://mastervision.su/contacts/';
+$mail->Subject = 'Сообщение со страницы https://mastervision.su/personal-consultation/';
 $mail->Body    = '<p>Имя: ' . $f_name . '</p><p>Фамилия: ' . $l_name . '</p><p>Skype: '.$skype . '</p><p>Телефон: '.$phone . '</p><p>Сообщение: '.$message . '</p>';
 $mail->AltBody = '';
 

@@ -46,6 +46,20 @@ Template Name: Упражнения: Шульте
             <input class="button" id="clear_timer" type="button" value="Обнулить"/>
           </form>
           <div id="shulte_table"></div>
+          <div class="clearfix"></div>
+          <div class="row likeit">
+          <div class="col-md-7">
+            <h5>Понравилcя тест? Расскажите друзьям:</h5>
+          </div>
+          <div class="col-md-5">
+            <script type="text/javascript">(function () {if (window.pluso)if (typeof window.pluso.start == "function") return;if (window.ifpluso == undefined) {window.ifpluso = 1;var d = document,s = d.createElement('script'),g = 'getElementsByTagName';s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://share.pluso.ru/pluso-like.js';var h = d[g]('body')[0];h.appendChild(s);}})();</script>
+            <div class="pluso" data-background="transparent" data-options="big,round,line,horizontal,counter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,email"></div>
+          </div>
+        </div>
+        <h4 class="comments">Комментарии</h4>
+        <?php  if(comments_open( get_the_ID() ))  {
+                  comments_template(); 
+                } ?>
         </div>
       </div>
     </section>

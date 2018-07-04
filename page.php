@@ -8,6 +8,9 @@
       <div class="container">
       <?php the_content(); ?>
             <?php endwhile; ?>
+            <?php  if(comments_open( get_the_ID() ))  {
+                  comments_template(); 
+                } ?>
               <?php endif; ?>
       </div>
     </section>

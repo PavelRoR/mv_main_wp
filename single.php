@@ -24,7 +24,7 @@
         </div>
         <h4 class="comments">Комментарии</h4>
         <?php  if(comments_open( get_the_ID() ))  {
-                    comments_template('', true); 
+                  comments_template(); 
                 } ?>
         </div>
       </div>

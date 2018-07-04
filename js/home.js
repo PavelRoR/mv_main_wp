@@ -1,4 +1,13 @@
 $(document).ready(function () {
+    /* Видео */
+    $(function () {
+
+        $("#about_eso_video_container ").click(function () {
+            var a = $('.video_wrapper', this).attr("data-youtube");
+            $('.video_wrapper', this).html('<iframe src="https://www.youtube.com/embed/' + a + '?showinfo=0&rel=0&autoplay=1"  class="video_testimonial" allowfullscreen></iframe>').css("z-index", "19");
+            $(this).children('.about_esoteric_title').hide();
+        });
+    });
     $("#main_slider").lightSlider({
         item: 2,
         autoWidth: false,
@@ -96,5 +105,41 @@ $(document).ready(function () {
                 item: 2,
             }
         }]
-    }); 
+    });
+    /*Проверка почты */
+    $(function () {
+        var check = $('.check', this),
+            email = $('.main_form_email', this),
+            button = $('.main_form_button', this);
+
+        $("body").on("submit", ".main_form", function () {
+            var check = $('.check', this),
+                reNone = /.+/,
+                email = $('.main_form_email', this),
+                button = $('.main_form_button', this);
+            if (!email.val().match(reNone)) {
+                email.css("border", "1px solid red");
+                button.text('Введите email');
+                return false;
+            };
+            if (!check.prop("checked")) {
+                check.next().css("color", "red");
+                button.text('Подтвердите соглашение');
+                return false;
+            };
+        });
+        email.click(function () {
+            email.css("border-color", "rgba(85, 94, 124, .3)");
+            button.text('Получить материалы');
+        });
+        email.keypress(function () {
+            email.css("border-color", "rgba(85, 94, 124, .3)");
+            button.text('Получить материалы');
+        });
+        check.click(function () {
+            check.next().css("color", "rgba(17, 17, 18, .8)");
+            button.text('Получить материалы');
+        });
+    });
+    /*Конец документа*/
 });

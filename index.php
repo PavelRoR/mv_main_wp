@@ -13,32 +13,32 @@
             <p class="course_nums">12 курсов</p>
           </div>
           <div id="cir_slider">
-                <div class="cir_single"><img class="cir_img" src="img/course_rec_1.jpg" alt="Секреты рун"/>
+                <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_1.jpg" alt="Секреты рун"/>
                   <p class="cir_cat">Магия</p>
                   <h4 class="cir_title">Секреты рун</h4>
                   <p class="cir_author">Василий Попов</p><a class="cir_button" href="javascript:void(0);" target="_blank">Купить за 970р.</a>
-                  <p class="cir_time"> <img src="img/clock.png" alt="Время"/>04:35:40
+                  <p class="cir_time"> <img src="<?php bloginfo(template_url) ;?>/img/clock.png" alt="Время"/>04:35:40
                   </p>
                 </div>
-                <div class="cir_single"><img class="cir_img" src="img/course_rec_2.jpg" alt="Магия цифр"/>
+                <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_2.jpg" alt="Магия цифр"/>
                   <p class="cir_cat">Нумерология</p>
                   <h4 class="cir_title">Магия цифр</h4>
                   <p class="cir_author">Ольга Герасимова</p><a class="cir_button" href="javascript:void(0);" target="_blank">Купить за 970р.</a>
-                  <p class="cir_time"> <img src="img/clock.png" alt="Время"/>04:35:40
+                  <p class="cir_time"> <img src="<?php bloginfo(template_url) ;?>/img/clock.png" alt="Время"/>04:35:40
                   </p>
                 </div>
-                <div class="cir_single"><img class="cir_img" src="img/course_rec_1.jpg" alt="Секреты Таро"/>
+                <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_1.jpg" alt="Секреты Таро"/>
                   <p class="cir_cat">Таро</p>
                   <h4 class="cir_title">Секреты Таро</h4>
                   <p class="cir_author">Василий Попов</p><a class="cir_button" href="javascript:void(0);" target="_blank">Купить за 970р.</a>
-                  <p class="cir_time"> <img src="img/clock.png" alt="Время"/>04:35:40
+                  <p class="cir_time"> <img src="<?php bloginfo(template_url) ;?>/img/clock.png" alt="Время"/>04:35:40
                   </p>
                 </div>
-                <div class="cir_single"><img class="cir_img" src="img/course_rec_1.jpg" alt="Секреты рун"/>
+                <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_1.jpg" alt="Секреты рун"/>
                   <p class="cir_cat">Магия</p>
                   <h4 class="cir_title">Секреты рун</h4>
                   <p class="cir_author">Василий Попов</p><a class="cir_button" href="javascript:void(0);" target="_blank">Купить за 970р.</a>
-                  <p class="cir_time"> <img src="img/clock.png" alt="Время"/>04:35:40
+                  <p class="cir_time"> <img src="<?php bloginfo(template_url) ;?>/img/clock.png" alt="Время"/>04:35:40
                   </p>
                 </div>
           </div>
@@ -51,7 +51,7 @@
           <div class="col-md-8 col-sm-12">
             <div id="about_eso_video_container"> 
               <h4 class="about_esoteric_title">Почему важно заниматься саморазвитием?<br/><small>Александр Кудряшов</small></h4>
-              <div class="video_wrapper" data-youtube="0C9Bwzai1XU"><img src="img/about_eso.jpg" alt="Василий Попов об Эзотерике"/></div>
+              <div class="video_wrapper" data-youtube="0C9Bwzai1XU"><img src="<?php bloginfo(template_url) ;?>/img/about_eso.jpg" alt="Василий Попов об Эзотерике"/></div>
             </div>
           </div>
           <div class="col-md-4 col-sm-12">
@@ -124,11 +124,11 @@
         <div class="row">
           <div class="col-md-8 col-sm-12 first_new"><a href="javascript:void(0);" target="_blank">
               <div class="news_video_container main_nvc">
-                <h4 class="about_esoteric_title">Посиделки Онлайн с Василием Поповым 13 апреля 2018г</h4><img src="img/news_pic_1.jpg" alt="Василий Попов об Эзотерике"/>
+                <h4 class="about_esoteric_title">Посиделки Онлайн с Василием Поповым 13 апреля 2018г</h4><img src="<?php bloginfo(template_url) ;?>/img/news_pic_1.jpg" alt="Василий Попов об Эзотерике"/>
               </div></a></div>
           <div class="col-md-4 col-sm-12"><a href="javascript:void(0);" target="_blank">
               <div class="news_video_container secondary_nvc">
-                <h4 class="about_esoteric_title">Сенсационный проект Трансформация уже в открытом доступе! Решение проблем с помощью Экстрасенсов!</h4><img src="img/news_pic_2.jpg" alt="Василий Попов об Эзотерике"/>
+                <h4 class="about_esoteric_title">Сенсационный проект Трансформация уже в открытом доступе! Решение проблем с помощью Экстрасенсов!</h4><img src="<?php bloginfo(template_url) ;?>/img/news_pic_2.jpg" alt="Василий Попов об Эзотерике"/>
               </div></a>
             <form class="main_form main_form_in_news" action="https://aleksandrkudryashov1.autoweboffice.ru/?r=personal/newsletter/sub/add&amp;id=3568&amp;lg=ru" method="post" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8" target="_blank">
               <h4 class="main_form_title">Будьте в курсе!</h4>
@@ -163,35 +163,35 @@
             <h3>Последние статьи на сайте</h3><a class="all_posts all_posts_before" href="https://pavelror.github.io/mv_main/articles" target="_blank">Все статьи</a>
           </div>
           <div id="last_posts_slider"><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Экстрасенсорика</p><img class="lp_thumbnail" src="img/lp_pic_1.jpg" alt="Дистанционное видение, основанное на интуиции"/>
+                  <p class="lp_cat">Экстрасенсорика</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_1.jpg" alt="Дистанционное видение, основанное на интуиции"/>
                   <div class="lp_about">
                     <h4 class="lp_title">Дистанционное видение, основанное на интуиции</h4>
                     <p>Наиболее успешны люди, которые обладают сильной интуицией. Как её развить, сделать инструментом ...</p>
                   </div>
                   <div class="arrow_more">&rarr;</div>
                   <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Астрология</p><img class="lp_thumbnail" src="img/lp_pic_2.jpg" alt="Исцеляющая астрология"/>
+                  <p class="lp_cat">Астрология</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_2.jpg" alt="Исцеляющая астрология"/>
                   <div class="lp_about">
                     <h4 class="lp_title">Исцеляющая астрология</h4>
                     <p>Чего проще? — заходи в сеть и ищи, какой дом отвечает за здоровье. Какая управляющая планета у вас в этом доме?...</p>
                   </div>
                   <div class="arrow_more">&rarr;</div>
                   <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Психология</p><img class="lp_thumbnail" src="img/lp_pic_3.jpg" alt="Идеальный подход в поиске совместимости партнеров"/>
+                  <p class="lp_cat">Психология</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_3.jpg" alt="Идеальный подход в поиске совместимости партнеров"/>
                   <div class="lp_about">
                     <h4 class="lp_title">Идеальный подход в поиске совместимости партнеров</h4>
                     <p>Мечтать о счастливой совместной жизни с партнёром не запретишь! Но всем ли женщинам удаётся...</p>
                   </div>
                   <div class="arrow_more">&rarr;</div>
                   <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Астрология</p><img class="lp_thumbnail" src="img/lp_pic_2.jpg" alt="Исцеляющая астрология"/>
+                  <p class="lp_cat">Астрология</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_2.jpg" alt="Исцеляющая астрология"/>
                   <div class="lp_about">
                     <h4 class="lp_title">Исцеляющая астрология</h4>
                     <p>Чего проще? — заходи в сеть и ищи, какой дом отвечает за здоровье. Какая управляющая планета у вас в этом доме?...</p>
                   </div>
                   <div class="arrow_more">&rarr;</div>
                   <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Экстрасенсорика</p><img class="lp_thumbnail" src="img/lp_pic_1.jpg" alt="Дистанционное видение, основанное на интуиции"/>
+                  <p class="lp_cat">Экстрасенсорика</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_1.jpg" alt="Дистанционное видение, основанное на интуиции"/>
                   <div class="lp_about">
                     <h4 class="lp_title">Дистанционное видение, основанное на интуиции</h4>
                     <p>Наиболее успешны люди, которые обладают сильной интуицией. Как её развить, сделать инструментом ...</p>
