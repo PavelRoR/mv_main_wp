@@ -82,6 +82,6 @@ $(function () {
 });
 $(function () {
     $('#color_box').on("click", function () {
-        $(this).css("backgroundColor", "#fff");
+        $(this).css("backgroundColor", "transparent");
     })
 });
