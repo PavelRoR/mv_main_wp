@@ -160,45 +160,38 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3 col-sm-3 col-md-3 title_an_rules">
-            <h3>Последние статьи на сайте</h3><a class="all_posts all_posts_before" href="https://pavelror.github.io/mv_main/articles" target="_blank">Все статьи</a>
+            <h3>Последние статьи на сайте</h3><a class="all_posts all_posts_before" href="/articles/">Все статьи</a>
           </div>
-          <div id="last_posts_slider"><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Экстрасенсорика</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_1.jpg" alt="Дистанционное видение, основанное на интуиции"/>
-                  <div class="lp_about">
-                    <h4 class="lp_title">Дистанционное видение, основанное на интуиции</h4>
-                    <p>Наиболее успешны люди, которые обладают сильной интуицией. Как её развить, сделать инструментом ...</p>
-                  </div>
-                  <div class="arrow_more">&rarr;</div>
-                  <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Астрология</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_2.jpg" alt="Исцеляющая астрология"/>
-                  <div class="lp_about">
-                    <h4 class="lp_title">Исцеляющая астрология</h4>
-                    <p>Чего проще? — заходи в сеть и ищи, какой дом отвечает за здоровье. Какая управляющая планета у вас в этом доме?...</p>
-                  </div>
-                  <div class="arrow_more">&rarr;</div>
-                  <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Психология</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_3.jpg" alt="Идеальный подход в поиске совместимости партнеров"/>
-                  <div class="lp_about">
-                    <h4 class="lp_title">Идеальный подход в поиске совместимости партнеров</h4>
-                    <p>Мечтать о счастливой совместной жизни с партнёром не запретишь! Но всем ли женщинам удаётся...</p>
-                  </div>
-                  <div class="arrow_more">&rarr;</div>
-                  <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Астрология</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_2.jpg" alt="Исцеляющая астрология"/>
-                  <div class="lp_about">
-                    <h4 class="lp_title">Исцеляющая астрология</h4>
-                    <p>Чего проще? — заходи в сеть и ищи, какой дом отвечает за здоровье. Какая управляющая планета у вас в этом доме?...</p>
-                  </div>
-                  <div class="arrow_more">&rarr;</div>
-                  <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a><a class="lp_single" href="https://pavelror.github.io/mv_main/single_article">
-                  <p class="lp_cat">Экстрасенсорика</p><img class="lp_thumbnail" src="<?php bloginfo(template_url) ;?>/img/lp_pic_1.jpg" alt="Дистанционное видение, основанное на интуиции"/>
-                  <div class="lp_about">
-                    <h4 class="lp_title">Дистанционное видение, основанное на интуиции</h4>
-                    <p>Наиболее успешны люди, которые обладают сильной интуицией. Как её развить, сделать инструментом ...</p>
-                  </div>
-                  <div class="arrow_more">&rarr;</div>
-                  <div class="lp_seen"><i class="fa fa-eye" aria-hidden="true"> </i>32</div></a>
-          </div><a class="all_posts all_posts_after" href="https://pavelror.github.io/mv_main/articles" target="_blank">Все статьи</a>
+          <div id="last_posts_slider">
+          <?php
+                    $the_query = new WP_Query( array(
+                        'posts_per_page' => 5,
+                        'category_name'  => 'blog'
+                    ) );
+                    while( $the_query->have_posts() ){
+                        $the_query->the_post(); ?>
+           
+                <a class="lp_single" href="<?php the_permalink(); ?>">
+                    <p class="lp_cat"><?php $category = get_the_category(); 
+echo $category[0]->cat_name; ?></p>
+                    <div class="lp_thumbnail" style="background-image: url(<?php the_post_thumbnail_url(); ?>)"></div>
+                    
+                    <div class="lp_about">
+                        <h4 class="lp_title"><?php the_title(); ?></h4>
+                        <p class="lp_text"><?php the_excerpt(); ?></p>
+                    </div>
+                    <div class="lp_footer">
+                        <div class="arrow_more">&rarr;</div>
+                        <div class="lp_seen">
+                            <i class="fa fa-eye" aria-hidden="true"> </i><?php echo getPostViews(get_the_ID()); ?></div>
+                    </div>
+                </a>
+         
+            <?php 
+} 
+wp_reset_postdata(); ?>
+</div>
+<a class="all_posts all_posts_after" href="/articles/" >Все статьи</a>
         </div>
       </div>
     </section>

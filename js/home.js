@@ -102,6 +102,7 @@ $(document).ready(function () {
         responsive: [{
             breakpoint: 481,
             settings: {
+                autoWidth: true,
                 item: 2,
             }
         }]

@@ -101,7 +101,7 @@ function faq(){
 	register_post_type('faq', array(
 		'post_type' => 'post',
 		'public' => true,
-		'has_archive' => fals,
+		'has_archive' => true,
 	  	'show_in_menu'  => true,
 		'menu_icon' => 'dashicons-welcome-learn-more',
 		'supports' => array('title', 'editor', 'author','revisions','post-formats'),

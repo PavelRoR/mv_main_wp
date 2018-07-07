@@ -19,7 +19,7 @@ Template Name: FAQ
         'posts_per_page' => -1
         ) );
         
-        while( $the_query->have_posts() ){
+        while( $the_query->have_posts() ) :
             $the_query->the_post(); ?>
             <div class="faq_container">
                 <div class="faq_title">
@@ -30,9 +30,8 @@ Template Name: FAQ
 
                 </div>
               </div>
-                <?php 
-} 
-wp_reset_postdata(); ?>
+        <?php endwhile;
+         wp_reset_postdata(); ?>
         </div>
     </section>
 <?php get_footer('about'); ?>
