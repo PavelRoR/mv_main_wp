@@ -21,6 +21,7 @@ $(document).ready(function () {
         speed: 2000,
         auto: true,
         loop: true,
+
         pager: true,
         slideEndAnimation: false,
         pause: 5000,
@@ -42,6 +43,7 @@ $(document).ready(function () {
             }
         }]
     });
+    
     $("#cir_slider").lightSlider({
         item: 3,
         autoWidth: false,
@@ -75,6 +77,7 @@ $(document).ready(function () {
         }]
     });
     $("#last_posts_slider").lightSlider({
+        addID: 'lpp',
         item: 3,
         autoWidth: false,
         slideMove: 1,
@@ -104,7 +107,9 @@ $(document).ready(function () {
             settings: {
                 autoWidth: true,
                 item: 2,
+                slideMargin:10,
             }
+
         }]
     });
     /*Проверка почты */

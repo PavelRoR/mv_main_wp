@@ -1075,7 +1075,20 @@ article img {
 }
 
 .news_video_container {
-    position: relative
+    position: relative;
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-position: center top;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.main_nvc {
+    height: 650px;
+}
+
+.secondary_nvc {
+    height: 310px;
 }
 
 .news_video_container:before {
@@ -3076,6 +3089,12 @@ article img {
         margin-top: 0;
         width: 300px
     }
+    .main_nvc {
+        height: 784px;
+    }
+    .secondary_nvc {
+        height: 377px;
+    }
 }
 
 @media screen and (max-width:1199px) {
@@ -3193,6 +3212,12 @@ article img {
     }
     .request_example {
         min-height: 383px
+    }
+    .main_nvc {
+        height: 610px;
+    }
+    .secondary_nvc {
+        height: 290px;
     }
 }
 
@@ -3439,7 +3464,7 @@ article img {
         margin-bottom: 10px
     }
     .secondary_nvc {
-        height: auto;
+        height: 610px;
         margin-bottom: 30px
     }
     .main_form_in_news {
@@ -3604,6 +3629,15 @@ article img {
     #myPolitics .modal-title {
         width: 70%;
         margin: 0 auto
+    }
+    .main_nvc,
+    .secondary_nvc {
+        height: 400px;
+        width: 400px;
+        margin: 0 auto 20px
+    }
+    .main_form_in_news {
+        margin-top: 30px
     }
 }
 
@@ -4062,6 +4096,21 @@ article img {
     #consultation_order {
         padding: 30px 0 40px
     }
+    .main_nvc,
+    .secondary_nvc {
+        height: 300px;
+        width: 300px;
+        margin: 0 auto 10px
+    }
+    .news_video_container::after,
+    .secondary_nvc::after {
+        width: 35px;
+        height: 35px;
+        bottom: 20px;
+        top: auto;
+        left: 20px;
+        right: auto;
+    }
 }
 
 @media screen and (max-width:380px) {
@@ -4212,5 +4261,13 @@ article img {
     #articles_list .article_col .lp_single,
     #exersises_list .lp_single {
         width: 100% !important
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .main_nvc,
+    .secondary_nvc {
+        height: 250px;
+        width: 250px;
     }
 }

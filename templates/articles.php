@@ -21,7 +21,7 @@ Template Name: Статьи
                         'paged'          => $paged,
                     ) );
 
-                    while( $the_query->have_posts() ){
+                    while( $the_query->have_posts() ) :
                         $the_query->the_post(); ?>
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 article_col">
                 <a class="lp_single" href="<?php the_permalink(); ?>">
@@ -40,9 +40,7 @@ echo $category[0]->cat_name; ?></p>
                     </div>
                 </a>
             </div>
-            <?php 
-} 
-wp_reset_postdata(); ?>
+                    <?php endwhile; wp_reset_postdata(); ?>
         </div>
         <?php
             // global $wp_query;

@@ -122,15 +122,36 @@
       <div class="container">
         <h3>Что нового</h3>
         <div class="row">
-          <div class="col-md-8 col-sm-12 first_new"><a href="javascript:void(0);" target="_blank">
-              <div class="news_video_container main_nvc">
-                <h4 class="about_esoteric_title">Посиделки Онлайн с Василием Поповым 13 апреля 2018г</h4><img src="<?php bloginfo(template_url) ;?>/img/news_pic_1.jpg" alt="Василий Попов об Эзотерике"/>
-              </div></a></div>
-          <div class="col-md-4 col-sm-12"><a href="javascript:void(0);" target="_blank">
-              <div class="news_video_container secondary_nvc">
-                <h4 class="about_esoteric_title">Сенсационный проект Трансформация уже в открытом доступе! Решение проблем с помощью Экстрасенсов!</h4><img src="<?php bloginfo(template_url) ;?>/img/news_pic_2.jpg" alt="Василий Попов об Эзотерике"/>
+          <div class="col-md-8 col-sm-12 first_new">
+          <?php
+                    $the_query = new WP_Query( array(
+                        'posts_per_page' => 1,
+                        'category_name'  => 'news',
+                    ) );
+                    while( $the_query->have_posts() ):
+                        $the_query->the_post(); ?>
+          <a href="<?php  the_permalink();?>" >
+              <div class="news_video_container main_nvc" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+                <h4 class="about_esoteric_title"><?php the_title() ;?></h4>
               </div></a>
-            <form class="main_form main_form_in_news" action="https://aleksandrkudryashov1.autoweboffice.ru/?r=personal/newsletter/sub/add&amp;id=3568&amp;lg=ru" method="post" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8" target="_blank">
+              <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+          <div class="col-md-4 col-sm-12">
+          <?php
+                    $the_query = new WP_Query( array(
+                        'posts_per_page' => 2,
+                        'category_name'  => 'news',
+                        'offset'=>1
+                    ) );
+                    while( $the_query->have_posts() ):
+                        $the_query->the_post(); ?>
+              <a href="<?php  the_permalink();?>" >
+              <div class="news_video_container secondary_nvc" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+                <h4 class="about_esoteric_title"><?php the_title() ;?></h4>
+              </div>
+            </a>
+            <?php endwhile; wp_reset_postdata(); ?>
+            <form class="main_form main_form_in_news" action="https://aleksandrkudryashov1.autoweboffice.ru/?r=personal/newsletter/sub/add&id=3568&lg=ru" method="post" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8" target="_blank">
               <h4 class="main_form_title">Будьте в курсе!</h4>
               <p class="main_form_subtitle">Подпишитесь на наши новости, и получайте видео бонусы</p>
               <input value="1" name="required_fields[email]" type="hidden"/>

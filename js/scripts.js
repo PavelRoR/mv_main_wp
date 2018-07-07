@@ -75,6 +75,8 @@ $(document).ready(function () {
             }, 400);
         });
     });
-
+    $(function () {
+        $('#single iframe').wrap('<div class="video_wrapper"></div>');
+    });
     /*Конец документа*/
 });
