@@ -1,34 +1,21 @@
-<?php
-/*
-Template Name: Статьи
-*/
-?>
 <?php get_header(); ?>
-<h1 class="main_title">Статьи</h1>
-<h2 class="main_subtitle">Когда человек не находит выхода из сложной ситуации, перепробовав множество официальных средств, он приходит к эзотерическим
-    учениям. И, проявив упорство, обязательно получает результат...</h2>
+<h1 class="main_title"><?php single_cat_title('<span>Статьи рубрики:</span>&nbsp;'); ?></h1>
 </div>
 </section>
 <section id="articles_list">
     <div class="container">
         <div class="row">
 		<?php
-                    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-
-                    $the_query = new WP_Query( array(
-                        'posts_per_page' => 9,
-                        'paged'          => $paged,
-                    ) );
-                    while( $the_query->have_posts() ){
-                        $the_query->the_post(); ?>
+                     if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 article_col">
                 <a class="lp_single" href="<?php the_permalink(); ?>">
-                    <p class="lp_cat"><?php the_category() ?></p>
+                    <p class="lp_cat"><?php $category = get_the_category(); 
+echo $category[0]->cat_name; ?></p>
                     <div class="lp_thumbnail" style="background-image: url(<?php the_post_thumbnail_url(); ?>)"></div>
                     
                     <div class="lp_about">
                         <h4 class="lp_title"><?php the_title(); ?></h4>
-                        <p><?php the_excerpt(); ?></p>
+                        <p class="lp_text"><?php the_excerpt(); ?></p>
                     </div>
                     <div class="lp_footer">
                         <div class="arrow_more">&rarr;</div>
@@ -37,10 +24,9 @@ Template Name: Статьи
                     </div>
                 </a>
             </div>
-            <?php 
-} 
-wp_reset_postdata(); ?>
+                    <?php endwhile; ?>
         </div>
+ 
         <?php
             // global $wp_query;
 
@@ -51,13 +37,13 @@ $pag = paginate_links( array(
 	'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 	'format'  => '?paged=%#%',
 	'current' => max( 1, get_query_var('paged') ),
-    'total'   => $the_query->max_num_pages,
-    'end_size' => 1,
+    'total'   => $wp_query->max_num_pages,
+    'end_size' => 2,
     'mid_size' => 1,
     'prev_text' => ('&lt;'),
 			'next_text' => ('&gt;'),
 ) );
-if ($the_query->max_num_pages > 1) :
+if ($wp_query->max_num_pages > 1) :
     ?>
     <ul class="articles_pagination">
         <?php
@@ -66,9 +52,10 @@ if ($the_query->max_num_pages > 1) :
         }
         ?>
     </ul>
-    <?php
-    endif;
-            ?>
+    <?php endif; ;?>
+    <?php else: ?>
+        <!-- no posts found -->
+        <?php endif; ?>
     </div>
 </section>
 <?php get_footer(); ?>

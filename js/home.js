@@ -9,7 +9,7 @@ $(document).ready(function () {
         });
     });
     $("#main_slider").lightSlider({
-        item: 2,
+        item: 1,
         autoWidth: false,
         slideMove: 1,
         slideMargin: 20,
@@ -19,9 +19,8 @@ $(document).ready(function () {
         controls: false,
         easing: 'linear',
         speed: 2000,
-        auto: true,
-        loop: true,
-
+        auto: 0,
+        loop: 0,
         pager: true,
         slideEndAnimation: false,
         pause: 5000,

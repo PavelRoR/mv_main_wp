@@ -2,7 +2,9 @@
 <h1 class="main_title">Ближайшие мероприятия</h1>
       </div>
       <div id="main_slider_container">
-        <div id="main_slider"><a class="item" href="javascript:void(0);"><img src="<?php  bloginfo('template_url');?>/img/1024CHRM3.jpg" alt="Баннер 1"/></a><a class="item" href="javascript:void(0);"><img src="<?php  bloginfo('template_url');?>/img/1024AYUR.jpg" alt="Баннер 2"/></a></div>
+        <div id="main_slider">
+          <a class="item" href="javascript:void(0);"target="_blank"><img src="http://mastervision/wp-content/uploads/2018/07/1024MAKREC.jpg" alt="Баннер 1"/></a>
+        </div>
       </div>
     </section>
     <section id="courses_in_record">
