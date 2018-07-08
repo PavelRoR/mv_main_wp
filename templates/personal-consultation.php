@@ -39,8 +39,8 @@ Template Name: Личная консультация
             </div>
           </div>
         </div>
-        <h3 class="specialists_title">Наши специалисты</h3>
-        <div class="row" id="our_specialists">
+        <h3 class="specialists_title hidden">Наши специалисты</h3>
+        <div class="row hidden" id="our_specialists">
         <?php 
     $the_query = new WP_Query( array(
         'post_type' => 'consultants',
@@ -49,7 +49,7 @@ Template Name: Личная консультация
         'posts_per_page' => 4
         ) );
         
-        while( $the_query->have_posts() ){
+        while( $the_query->have_posts() ):
             $the_query->the_post(); ?>
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="our_specialist"><?php the_post_thumbnail() ;?>
@@ -57,12 +57,10 @@ Template Name: Личная консультация
               <p>астролог, таролог</p>
             </div>
           </div>
-          <?php 
-} 
-wp_reset_postdata(); ?>
+        <?php endwhile; wp_reset_postdata(); ?>
         </div>
-        <button class="all_posts all_specialists">Все специалисты</button>
-        <div class="row" id="our_specialists_more">
+        <button class="all_posts all_specialists hidden">Все специалисты</button>
+        <div class="row" id="our_specialists_more hidden">
         <?php 
     $the_query = new WP_Query( array(
         'post_type' => 'consultants',
@@ -71,17 +69,15 @@ wp_reset_postdata(); ?>
         'posts_per_page' => -1
         ) );
         
-        while( $the_query->have_posts() ){
+        while( $the_query->have_posts() ):
             $the_query->the_post(); ?>
-          <div class="col-md-3 col-sm-6 col-xs-12 hidden_consultants">
+          <div class="col-md-3 col-sm-6 col-xs-12 hidden_consultants hidden">
             <div class="our_specialist"><?php the_post_thumbnail() ;?>
               <h4>Имя Фамилия Отчество</h4>
               <p>астролог, таролог</p>
             </div>
           </div>
-          <?php 
-} 
-wp_reset_postdata(); ?>
+          <?php endwhile;wp_reset_postdata(); ?>
         </div>
       </div>
     </section>

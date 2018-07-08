@@ -46,8 +46,6 @@ $('.slick-image-slide-wrap').parent($('a')).attr("target", "_blank");
     //     }]
     // });
     $(function () {
-        
-   
     $("#cir_slider").lightSlider({
         item: 3,
         autoWidth: false,

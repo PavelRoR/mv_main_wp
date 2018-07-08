@@ -13,40 +13,40 @@
         <div class="row">
           <div class="col-md-3 col-sm-3 title_an_rules">
             <h3>Курсы в записи</h3>
-            <p class="course_nums">12 курсов</p>
-            <br>
-            <br>
+            <!-- <p class="course_nums">12 курсов</p> -->
             <a class="all_posts all_posts_before all_cir" href="/courses-in-record/">Все курсы</a>
           </div>
           <div id="cir_slider">
-                <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_1.jpg" alt="Секреты рун"/>
-                  <p class="cir_cat">Магия</p>
-                  <h4 class="cir_title">Секреты рун</h4>
-                  <p class="cir_author">Василий Попов</p><a class="cir_button" href="javascript:void(0);" target="_blank">Купить за 970р.</a>
-                  <p class="cir_time"> <img src="<?php bloginfo(template_url) ;?>/img/clock.png" alt="Время"/>04:35:40
-                  </p>
+          <?php
+                    $the_query = new WP_Query( array(
+                        'posts_per_page' => 5,
+                        'post_type' => 'cir',
+                        'publish' => true,
+                        'orderby'=>'rand'
+                    ) );
+                    while( $the_query->have_posts() ):
+                        $the_query->the_post(); ?>
+                <div class="cir_single" style="background-image:url('<?php the_post_thumbnail_url(); ?>')">
+                  <p class="cir_cat"><?php  global $post;
+    				if (get_post_meta($post->ID, 'cir_cat', true)) {
+					 echo get_post_meta($post->ID, 'cir_cat', true);
+					} ?></p>
+                  <h4 class="cir_title"><?php the_title() ;?></h4>
+                  <p class="cir_author"><?php global $post;
+    				if (get_post_meta($post->ID, 'cir_author', true)) {
+					 echo get_post_meta($post->ID, 'cir_author', true);
+					} ?></p><a class="cir_button" href="<?php global $post;
+          if (get_post_meta($post->ID, 'cir_link', true)) {
+         echo get_post_meta($post->ID, 'cir_link', true);
+        } ?>" target="_blank">Купить за <?php global $post;
+        if (get_post_meta($post->ID, 'cir_price', true)) {
+       echo get_post_meta($post->ID, 'cir_price', true);
+      } ?>р.</a>
+                  <!-- <p class="cir_time">
+                  <img src="/img/clock.png" alt="Время"/>04:35:40
+                  </p> -->
                 </div>
-                <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_2.jpg" alt="Магия цифр"/>
-                  <p class="cir_cat">Нумерология</p>
-                  <h4 class="cir_title">Магия цифр</h4>
-                  <p class="cir_author">Ольга Герасимова</p><a class="cir_button" href="javascript:void(0);" target="_blank">Купить за 970р.</a>
-                  <p class="cir_time"> <img src="<?php bloginfo(template_url) ;?>/img/clock.png" alt="Время"/>04:35:40
-                  </p>
-                </div>
-                <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_1.jpg" alt="Секреты Таро"/>
-                  <p class="cir_cat">Таро</p>
-                  <h4 class="cir_title">Секреты Таро</h4>
-                  <p class="cir_author">Василий Попов</p><a class="cir_button" href="javascript:void(0);" target="_blank">Купить за 970р.</a>
-                  <p class="cir_time"> <img src="<?php bloginfo(template_url) ;?>/img/clock.png" alt="Время"/>04:35:40
-                  </p>
-                </div>
-                <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_1.jpg" alt="Секреты рун"/>
-                  <p class="cir_cat">Магия</p>
-                  <h4 class="cir_title">Секреты рун</h4>
-                  <p class="cir_author">Василий Попов</p><a class="cir_button" href="javascript:void(0);" target="_blank">Купить за 970р.</a>
-                  <p class="cir_time"> <img src="<?php bloginfo(template_url) ;?>/img/clock.png" alt="Время"/>04:35:40
-                  </p>
-                </div>
+                <?php endwhile; wp_reset_postdata(); ?>
           </div>
           <a class="all_posts all_posts_after" href="/courses-in-record/" >Все курсы</a>
         </div>
@@ -196,7 +196,7 @@
                         'posts_per_page' => 5,
                         'category_name'  => 'blog'
                     ) );
-                    while( $the_query->have_posts() ){
+                    while( $the_query->have_posts() ):
                         $the_query->the_post(); ?>
            
                 <a class="lp_single" href="<?php the_permalink(); ?>">
@@ -215,9 +215,7 @@ echo $category[0]->cat_name; ?></p>
                     </div>
                 </a>
          
-            <?php 
-} 
-wp_reset_postdata(); ?>
+                    <?php endwhile; wp_reset_postdata(); ?>
 </div>
 <a class="all_posts all_posts_after" href="/articles/" >Все статьи</a>
         </div>

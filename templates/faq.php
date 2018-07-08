@@ -34,4 +34,4 @@ Template Name: FAQ
          wp_reset_postdata(); ?>
         </div>
     </section>
-<?php get_footer('about'); ?>
+<?php get_footer(); ?>

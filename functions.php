@@ -145,6 +145,7 @@ function cir(){
 		'has_archive' => true,
 		'menu_icon' => 'dashicons-album',
 		'supports' => array('title', 'author','revisions','thumbnail', 'custom-fields'),
+		// 'taxonomies' => array('post_tag'),
 		'labels' => array(
 			'name' => 'Курсы в записи',
 			'all_items' => 'Все курсы',
@@ -153,8 +154,8 @@ function cir(){
 		)
 	));
 }
-
 add_action('init', 'cir');
+/*Виджеты*/
 add_theme_support('widgets');
 if(function_exists('register_sidebar'))
     register_sidebar( array('name' => 'Слайдер'));

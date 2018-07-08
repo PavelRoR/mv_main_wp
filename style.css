@@ -543,9 +543,11 @@ display: block;
     font-family: "HelveticaNeueCyrBold", sans-serif;
     color: #252525;
     line-height: 1;
-    margin: 41px 0 14px
+    margin: 41px 0 0
 }
-
+#courses_in_record .lSAction {
+    margin-top: 20px
+}
 .course_nums {
     font-size: 18px;
     font-family: "HelveticaNeueCyrRoman", sans-serif;
@@ -572,7 +574,8 @@ display: block;
     color: #f8f8f9;
     font-size: 24px;
     text-align: center;
-    display: block
+    display: block;
+    cursor: pointer;
 }
 
 .lSAction a:hover {
@@ -608,15 +611,33 @@ display: block;
     background-color: #fff;
     -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
     box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
-    width: 360px !important;
+    max-width: 360px;
+    /* width: 360px !important; */
     height: 420px;
     margin: 0 15px;
     position: relative;
     padding: 29px;
-    float: left
+    float: left;
+    background-position: center top;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
-
-.cir_img {
+.cir_single:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+/* .hidden {
+    display: none ;
+} */
+/* .cir_img {
     width: inherit;
     height: auto;
     position: absolute;
@@ -625,7 +646,7 @@ display: block;
     right: 0;
     bottom: 0;
     z-index: 0
-}
+} */
 
 .cir_cat {
     font-size: 10px;
@@ -1498,7 +1519,10 @@ display: block;
     background-color: #4745d7;
     color: #fff
 }
-
+.cir_col .cir_single{
+    float: none;
+    margin: 0 auto 40px
+}
 #single_article {
     background-color: #fefeff
 }
@@ -2681,10 +2705,13 @@ display: block;
     .all_cir {
         bottom: -140px
     }
-    .lp_single {
+    .lp_single,
+    .cir_single {
         min-width: 334px;
     }
-
+    #courses_in_record .lSAction {
+        margin-top: 40px
+    }
     #courses_in_record .row,
     #last_posts .row {
         margin: 0
@@ -2846,7 +2873,7 @@ display: block;
         line-height: 47px
     }
     .lp_single {
-        height: 630px
+        height: 530px
     }
     .lp_cat {
         font-size: 13px
@@ -2997,7 +3024,7 @@ display: block;
         font-size: 22px
     }
     .checking .check_label {
-        font-size: 20px
+        font-size: 16px
     }
     #number_generator_table {
         width: 600px;
@@ -3116,12 +3143,19 @@ display: block;
     .secondary_nvc {
         height: 377px;
     }
-    .lp_single {
+    .lp_single,
+    .cir_single {
         min-width: 400px;
     }
+    .cir_single {
+        height: 520px;
+    }
     .all_cir {
-        bottom: -140px;
+        bottom: -215px;
         margin-top: 0;
+    }
+    #courses_in_record .lSAction {
+        margin-top: 50px
     }
 }
 
@@ -4145,6 +4179,9 @@ display: block;
         top: auto;
         left: 20px;
         right: auto;
+    }
+    .cir_button{
+        bottom:30px
     }
 }
 
