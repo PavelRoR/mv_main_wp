@@ -16,7 +16,7 @@
             <p class="course_nums">12 курсов</p>
             <br>
             <br>
-            <a class="all_posts all_posts_before" href="/courses-in-record/">Все курсы</a>
+            <a class="all_posts all_posts_before all_cir" href="/courses-in-record/">Все курсы</a>
           </div>
           <div id="cir_slider">
                 <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_1.jpg" alt="Секреты рун"/>

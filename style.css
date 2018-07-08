@@ -1144,7 +1144,6 @@ display: block;
     margin-bottom: 10px;
     cursor: pointer;
     z-index: 9;
-    cursor: no-drop
 }
 
 .secondary_nvc h4 {
@@ -1297,16 +1296,16 @@ display: block;
     display: none
 }
 
-#last_posts_slider {
+/* #last_posts_slider {
     width: 2000px !important
-}
+} */
 
 .lp_single {
     border-radius: 3px;
     background-color: #fff;
     -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
     box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .07);
-    width: 360px !important;
+    max-width: 360px;
     height: 457px;
     margin: 0 15px;
     position: relative;
@@ -1368,7 +1367,8 @@ display: block;
 }
 
 .lp_about {
-    padding: 27px 29px
+    padding: 27px 29px;
+    max-width: 380px;
 }
 
 .lp_title {
@@ -1386,6 +1386,7 @@ display: block;
     color: rgba(85, 94, 124, .8);
     line-height: 1.444;
     margin-bottom: 0;
+
 }
 
 .arrow_more {
@@ -2606,7 +2607,12 @@ display: block;
     margin-bottom: 20px;
     line-height: 1.2
 }
-
+.all_cir {
+    margin-top: 0;
+    position: relative;
+    bottom: -170px;
+    z-index: 40;
+}
 #up {
     display: none;
     border-radius: 50px;
@@ -2631,7 +2637,7 @@ display: block;
     -webkit-animation-direction: normal;
     animation-direction: normal;
     cursor: pointer;
-    z-index: 20
+    z-index: 30
 }
 
 @-webkit-keyframes for_up {
@@ -2670,8 +2676,15 @@ display: block;
         width: auto
     }
     #single {
-        min-height: calc(100vh - 688px)
+        min-height: calc(100vh - 550px)
     }
+    .all_cir {
+        bottom: -140px
+    }
+    .lp_single {
+        min-width: 334px;
+    }
+
     #courses_in_record .row,
     #last_posts .row {
         margin: 0
@@ -3103,6 +3116,13 @@ display: block;
     .secondary_nvc {
         height: 377px;
     }
+    .lp_single {
+        min-width: 400px;
+    }
+    .all_cir {
+        bottom: -140px;
+        margin-top: 0;
+    }
 }
 
 @media screen and (max-width:1199px) {
@@ -3183,7 +3203,7 @@ display: block;
     }
     .lp_single {
         width: 280px !important;
-        height: 530px
+        height: 500px
     }
     #articles_list .article_col .lp_single,
     #exersises_list .lp_single {
@@ -3226,6 +3246,9 @@ display: block;
     }
     .secondary_nvc {
         height: 290px;
+    }
+    .all_cir {
+        bottom: -90px
     }
 }
 
@@ -3391,6 +3414,10 @@ display: block;
     .all_specialists {
         margin-top: 0;
         width: 225px
+    }
+    .all_cir {
+        bottom: -95px;
+        margin-top: 0 
     }
 }
 

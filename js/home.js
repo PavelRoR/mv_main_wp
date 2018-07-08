@@ -8,6 +8,9 @@ $(document).ready(function () {
             $(this).children('.about_esoteric_title').hide();
         });
     });
+    $(function () {
+$('.slick-image-slide-wrap').parent($('a')).attr("target", "_blank");
+    });
     // $("#main_slider").lightSlider({
     //     item: 1,
     //     autoWidth: false,
@@ -42,7 +45,9 @@ $(document).ready(function () {
     //         }
     //     }]
     // });
-    
+    $(function () {
+        
+   
     $("#cir_slider").lightSlider({
         item: 3,
         autoWidth: false,
@@ -75,6 +80,10 @@ $(document).ready(function () {
             }
         }]
     });
+});
+$(function () {
+    
+
     $("#last_posts_slider").lightSlider({
         item: 3,
         autoWidth: false,
@@ -85,15 +94,15 @@ $(document).ready(function () {
         controls: true,
         prevHtml: '&larr;',
         nextHtml: '&rarr;',
-        speed: 1000,
+        speed: 500,
         auto: false,
         loop: false,
-        slideEndAnimation: !0,
+        slideEndAnimation: false,
         pause: 3000,
         pauseOnHover: true,
         keyPress: false,
         rtl: false,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
         vertical: false,
         pager: false,
         gallery: false,
@@ -110,6 +119,7 @@ $(document).ready(function () {
 
         }]
     });
+});
     /*Проверка почты */
     $(function () {
         var check = $('.check', this),
