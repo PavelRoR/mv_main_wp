@@ -3,7 +3,8 @@
       </div>
       <div id="main_slider_container">
         <div id="main_slider">
-          <a class="item" href="javascript:void(0);"target="_blank"><img src="http://mastervision/wp-content/uploads/2018/07/1024MAKREC.jpg" alt="Баннер 1"/></a>
+          <!-- <a class="item" href="javascript:void(0);"target="_blank"><img src="http://mastervision/wp-content/uploads/2018/07/1024MAKREC.jpg" alt="Баннер 1"/></a> -->
+          <?php echo do_shortcode('[slick-carousel-slider category="33"   slidestoshow="1"  arrows="false"  autoplay_interval="3000" speed="900"   variablewidth="1" image_size="large" centermode="true"] ');?>
         </div>
       </div>
     </section>
@@ -13,6 +14,9 @@
           <div class="col-md-3 col-sm-3 title_an_rules">
             <h3>Курсы в записи</h3>
             <p class="course_nums">12 курсов</p>
+            <br>
+            <br>
+            <a class="all_posts all_posts_before" href="/courses-in-record/">Все курсы</a>
           </div>
           <div id="cir_slider">
                 <div class="cir_single"><img class="cir_img" src="<?php bloginfo(template_url) ;?>/img/course_rec_1.jpg" alt="Секреты рун"/>
@@ -44,6 +48,7 @@
                   </p>
                 </div>
           </div>
+          <a class="all_posts all_posts_after" href="/courses-in-record/" >Все курсы</a>
         </div>
       </div>
     </section>

@@ -5,39 +5,39 @@
 // if(!is_admin()){ remove_action('wp_head', 'wp_print_scripts'); remove_action('wp_head', 'wp_print_head_scripts', 9); remove_action('wp_head', 'wp_enqueue_scripts', 1); add_action('wp_footer', 'wp_print_scripts', 5); add_action('wp_footer', 'wp_enqueue_scripts', 5); add_action('wp_footer', 'wp_print_head_scripts', 5); wp_deregister_script('jquery'); 
 // }
 
-wp_deregister_script('jquery');
+// wp_deregister_script('jquery');
 function load_styles_and_scripts() {
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
 	wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
-	wp_enqueue_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',  'in_footer');
-	wp_enqueue_script('jquery-2.1.1', get_template_directory_uri() . '/js/jquery-2.1.1.min.js',  'in_footer');
-	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js',  'in_footer');
+	wp_enqueue_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+	wp_enqueue_script('jquery-2.1.1',  get_template_directory_uri().'/js/jquery-2.1.1.min.js');
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js');
 	if (is_home()) {
-		wp_enqueue_style('lightslider_styles', get_template_directory_uri() . '/css/lightslider.min.css', '', true);
-		wp_enqueue_script('lightslider', get_template_directory_uri() . '/js/lightslider.min.js', '', true);
-		wp_enqueue_script('sliders', get_template_directory_uri() . '/js/home.js',  true);
+		wp_enqueue_style('lightslider_styles', get_template_directory_uri() . '/css/lightslider.min.css');
+		wp_enqueue_script('lightslider', get_template_directory_uri() . '/js/lightslider.min.js');
+		wp_enqueue_script('sliders', get_template_directory_uri() . '/js/home.js');
 	}
-	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js',  'in_footer');
+	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js');
 	if(is_page('faq')) {
-		wp_enqueue_script('faq', get_template_directory_uri() . '/js/faq.js',  'in_footer');
+		wp_enqueue_script('faq', get_template_directory_uri() . '/js/faq.js');
 	}
 	if(is_page('personal-consultation')) {
-		wp_enqueue_script('consult_form', get_template_directory_uri() . '/js/consult.js',  'in_footer');
+		wp_enqueue_script('consult_form', get_template_directory_uri() . '/js/consult.js');
 	}
 	if(is_page('contacts')) {
-		wp_enqueue_script('contact_form', get_template_directory_uri() . '/js/contacts.js',  'in_footer');
+		wp_enqueue_script('contact_form', get_template_directory_uri() . '/js/contacts.js');
 	}
 	if(is_page('color-generator')) {
-		wp_enqueue_script('color-generator', get_template_directory_uri() . '/js/color-generator.js',  'in_footer');
+		wp_enqueue_script('color-generator', get_template_directory_uri() . '/js/color-generator.js');
 	}
 	if(is_page('number-generator')) {
-		wp_enqueue_script('number-generator', get_template_directory_uri() . '/js/number-generator.js',  'in_footer');
+		wp_enqueue_script('number-generator', get_template_directory_uri() . '/js/number-generator.js');
 	}
 	if(is_page('shulte')) {
-		wp_enqueue_script('shulte', get_template_directory_uri() . '/js/shulte.js',  'in_footer');
+		wp_enqueue_script('shulte', get_template_directory_uri() . '/js/shulte.js');
 	}
 	if(is_page('zener-cards')) {
-		wp_enqueue_script('zener-cards', get_template_directory_uri() . '/js/zener-cards.js',  'in_footer');
+		wp_enqueue_script('zener-cards', get_template_directory_uri() . '/js/zener-cards.js');
 	}
 
 }
@@ -128,15 +128,36 @@ function consultants(){
 		'labels' => array(
 			'name' => 'Консультанты',
 			'all_items' => 'Все консультанты',
-			'add_new' => 'Добавить нового',
-			'add_new_item' => 'Добавление консультанта'
+			'add_new' => 'Добавить консультанта',
+			'add_new_item' => 'Добавить консультанта'
 		)
 	));
 }
 
 add_action('init', 'consultants');
 
+/* Курсы в записи */
 
+function cir(){
+	register_post_type('cir', array(
+		'post_type' => 'post',
+		'public' => true,
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-album',
+		'supports' => array('title', 'author','revisions','thumbnail', 'custom-fields'),
+		'labels' => array(
+			'name' => 'Курсы в записи',
+			'all_items' => 'Все курсы',
+			'add_new' => 'Добавить новый',
+			'add_new_item' => 'Добавление нового'
+		)
+	));
+}
+
+add_action('init', 'cir');
+add_theme_support('widgets');
+if(function_exists('register_sidebar'))
+    register_sidebar( array('name' => 'Слайдер'));
 // Кастомная страница входа в админ-панель
 
 function mv_custom_enter () { ?>

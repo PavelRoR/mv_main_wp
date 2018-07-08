@@ -8,40 +8,40 @@ $(document).ready(function () {
             $(this).children('.about_esoteric_title').hide();
         });
     });
-    $("#main_slider").lightSlider({
-        item: 1,
-        autoWidth: false,
-        slideMove: 1,
-        slideMargin: 20,
-        mode: "slide",
-        useCSS: true,
-        cssEasing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        controls: false,
-        easing: 'linear',
-        speed: 2000,
-        auto: 0,
-        loop: 0,
-        pager: true,
-        slideEndAnimation: false,
-        pause: 5000,
-        pauseOnHover: true,
-        keyPress: false,
-        rtl: false,
-        adaptiveHeight: true,
-        vertical: false,
-        gallery: false,
-        enableTouch: true,
-        enableDrag: true,
-        freeMove: true,
-        swipeThreshold: 40,
-        responsive: [{
-            breakpoint: 481,
-            settings: {
-                item: 1,
-                slideMove: 1
-            }
-        }]
-    });
+    // $("#main_slider").lightSlider({
+    //     item: 1,
+    //     autoWidth: false,
+    //     slideMove: 1,
+    //     slideMargin: 20,
+    //     mode: "slide",
+    //     useCSS: true,
+    //     cssEasing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+    //     controls: false,
+    //     easing: 'linear',
+    //     speed: 2000,
+    //     auto: false,
+    //     loop: true,
+    //     pager: true,
+    //     slideEndAnimation: false,
+    //     pause: 5000,
+    //     pauseOnHover: true,
+    //     keyPress: false,
+    //     rtl: false,
+    //     adaptiveHeight: true,
+    //     vertical: false,
+    //     gallery: false,
+    //     enableTouch: true,
+    //     enableDrag: true,
+    //     freeMove: true,
+    //     swipeThreshold: 40,
+    //     responsive: [{
+    //         breakpoint: 481,
+    //         settings: {
+    //             item: 1,
+    //             slideMove: 1
+    //         }
+    //     }]
+    // });
     
     $("#cir_slider").lightSlider({
         item: 3,
@@ -76,7 +76,6 @@ $(document).ready(function () {
         }]
     });
     $("#last_posts_slider").lightSlider({
-        addID: 'lpp',
         item: 3,
         autoWidth: false,
         slideMove: 1,
